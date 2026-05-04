@@ -13,7 +13,7 @@
   gap: 6px;
   cursor: pointer;
   z-index: 99999; 
-  pointer-events: auto !important; 
+  pointer-events: auto !important; /* Forces the clicks to register */
 }
 
 .hamburger span {
@@ -131,4 +131,39 @@ color: rgb(255, 255, 255);
 
   width: 50px;
   height: 50px;
+}
+#menu-toggle {
+  display: none; /* Hides the white square checkbox */
+}
+
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hides the menu list off-screen to the right */
+  width: 250px;
+  height: 100vh;
+  background: rgba(20, 20, 20, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  transition: 0.5s ease-in-out;
+  z-index: 10000;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- 2. STYLE THE LINKS --- */
+.nav-links a {
+  color: white !important;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Aldrich', sans-serif;
+}
+
+/* --- 3. THE ACTION RULE (MUST BE AT THE END) --- */
+#menu-toggle:checked ~ .nav-links {
+  right: 0 !important; /* Slides the menu in when you click the hamburger */
 }
