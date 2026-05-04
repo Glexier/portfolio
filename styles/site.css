@@ -2,20 +2,11 @@
   
   .background {
     background-color: rgb(39, 35, 35);
-      /* Use 'vh' (viewport height) to ensure it spans the full screen */
       min-height: 100vh; 
       width: 100%;
-      
-      /* Box-sizing ensures the border doesn't add extra width/scrollbars */
       box-sizing: border-box; 
-      
-      /* Your existing border style, adjusted for responsiveness */
       border: 5px solid red; 
-      
-      /* If you want that glowing effect seen in your screenshot */
       box-shadow: inset 0 0 15px red, 0 0 15px red;
-      
-      /* Reset margins so the border touches the screen edges */
       margin: 0;
       padding: 20px; 
   }
@@ -35,17 +26,18 @@ color: black;
   margin: 20px auto;       
   width: 100%;             
 }
+
 .logo {
-  position: fixed; 
-  left: 20px;        
-  bottom: 20px;     
-  display: flex;     
-  gap: 15px;        
-  z-index: 1000;     
+  position: fixed;   
+  left: 30px;        
+  bottom: 30px;      
+  display: flex;
+  gap: 15px;
+  z-index: 9999;     
 }
 
-
 .logo img {
-  width: 40px; 
-  height: 40px;
+
+  width: 50px;
+  height: 50px;
 }
