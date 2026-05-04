@@ -1,13 +1,9 @@
-.background {
-   
-    background-color: rgb(39, 35, 35);
-   
-  }
+
   
-  .frame {
-    width: 90%;
-    height: 90%;
+  .background {
+    background-color: rgb(39, 35, 35);
     border-radius: 20px;
+    height: 900px;
   
     border: 3px solid #ff0000;
   
@@ -18,3 +14,18 @@
     padding: 20px;
     color: white;
   }
+
+  
+p {
+  font-family: "Aldrich", sans-serif;
+font-size: 40px;
+color: black;
+}
+
+.Glexier {
+  margin-left: 45%;
+  margin-top: 0%;
+}
+.logo {
+  margin-top: 24%;
+}
