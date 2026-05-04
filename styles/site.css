@@ -2,17 +2,22 @@
   
   .background {
     background-color: rgb(39, 35, 35);
-    border-radius: 20px;
-    height: 900px;
-  
-    border: 3px solid #ff0000;
-  
-    box-shadow: 0 0 10px #ff0000,
-                0 0 25px #ff0000,
-                0 0 50px #ff0000;
-  
-    padding: 20px;
-    color: white;
+      /* Use 'vh' (viewport height) to ensure it spans the full screen */
+      min-height: 100vh; 
+      width: 100%;
+      
+      /* Box-sizing ensures the border doesn't add extra width/scrollbars */
+      box-sizing: border-box; 
+      
+      /* Your existing border style, adjusted for responsiveness */
+      border: 5px solid red; 
+      
+      /* If you want that glowing effect seen in your screenshot */
+      box-shadow: inset 0 0 15px red, 0 0 15px red;
+      
+      /* Reset margins so the border touches the screen edges */
+      margin: 0;
+      padding: 20px; 
   }
 
   
@@ -23,9 +28,24 @@ color: black;
 }
 
 .Glexier {
-  margin-left: 45%;
-  margin-top: 0%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  flex-direction: column;  
+  margin: 20px auto;       
+  width: 100%;             
 }
 .logo {
-  margin-top: 24%;
+  position: fixed; 
+  left: 20px;        
+  bottom: 20px;     
+  display: flex;     
+  gap: 15px;        
+  z-index: 1000;     
+}
+
+
+.logo img {
+  width: 40px; 
+  height: 40px;
 }
