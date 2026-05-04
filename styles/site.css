@@ -1,8 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(39, 35, 35);
+  overflow-x: hidden;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 5px solid red;
+  box-shadow: inset 0 0 15px red, 0 0 15px red;
+  z-index: 9998;
+  pointer-events: none;
+}
 
 #menu-toggle {
   display: none;
 }
-
 
 .hamburger {
   position: fixed !important;
@@ -12,158 +30,122 @@
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
-  z-index: 99999; 
-  pointer-events: auto !important; /* Forces the clicks to register */
+  z-index: 10001;
+  pointer-events: auto !important;
 }
 
 .hamburger span {
   display: block;
   width: 35px;
   height: 4px;
-  background-color: white;
+  background-color: white !important;
+  border-radius: 2px;
   transition: 0.4s;
 }
 
-
-#menu-toggle {
-  position: fixed;
-  top: 35px;
-  right: 35px;
-  width: 35px;
-  height: 30px;
-  opacity: 0;
-  z-index: 100000; 
-  cursor: pointer;
-  display: block !important;
-}
-
-/* The Menu Drawer */
 .nav-links {
   position: fixed;
   top: 0;
-  right: -100%; /* Hidden */
-  width: 300px;
+  right: -100%;
+  width: 280px;
   height: 100vh;
-  background: rgba(10, 10, 10, 0.98);
-  border-left: 5px solid red;
+  background: rgba(15, 15, 15, 0.98);
+  border-left: 4px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  transition: 0.5s ease-in-out;
-  z-index: 99998;
   margin: 0;
   padding: 0;
   list-style: none;
+  transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  z-index: 10000;
+  pointer-events: auto !important;
 }
 
-/* THE CLICK ACTION */
+.nav-links a {
+  color: white !important;
+  text-decoration: none;
+  font-size: 22px;
+  font-family: 'Aldrich', sans-serif;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: red !important;
+  text-shadow: 0 0 10px red;
+}
+
 #menu-toggle:checked ~ .nav-links {
   right: 0 !important;
 }
 
-/* X Animation */
-#menu-toggle:checked ~ .hamburger span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
-#menu-toggle:checked ~ .hamburger span:nth-child(2) { opacity: 0; }
-#menu-toggle:checked ~ .hamburger span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
-  
-  .background {
-    background-color: rgb(39, 35, 35);
-    position: fixed; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    border: 5px solid red;
-    box-shadow: inset 0 0 15px red, 0 0 15px red;
-    margin: 0;
-    z-index: 9998; 
-    pointer-events: none; 
+#menu-toggle:checked ~ .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
 }
-.nav-links a {
-  color: white !important;
-  text-decoration: none; 
-  font-size: 20px; 
-  font-family: 'Aldrich', sans-serif;
-  text-transform: uppercase; 
-  display: inline-block;
-  padding-bottom: 5px;
-  border-bottom: 2px solid transparent; 
-  transition: 0.3s ease;
+#menu-toggle:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle:checked ~ .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
-
-.nav-links a:hover {
-  color: red !important;
-  border-bottom: 2px solid red; 
-}
-  
 p {
   font-family: "Aldrich", sans-serif;
-font-size: 45px;
-color: rgb(255, 255, 255);
+  font-size: 45px;
+  color: white;
+  text-align: center;
 }
 
 .Glexier {
   display: flex;
-  justify-content: center; 
-  align-items: center;    
-  flex-direction: column;  
-  margin: 20px auto;       
-  width: 100%;             
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .logo {
-  position: fixed;   
-  left: 30px;        
-  bottom: 30px;      
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
   display: flex;
   gap: 15px;
-  z-index: 9999;     
+  z-index: 9999;
+  pointer-events: auto !important;
 }
 
 .logo img {
-
   width: 50px;
   height: 50px;
-}
-#menu-toggle {
-  display: none; /* Hides the white square checkbox */
+  transition: 0.3s;
 }
 
-.nav-links {
-  position: fixed;
-  top: 0;
-  right: -100%; /* Hides the menu list off-screen to the right */
-  width: 250px;
-  height: 100vh;
-  background: rgba(20, 20, 20, 0.95);
+.logo img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px red);
+}
+
+.container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  list-style: none;
-  transition: 0.5s ease-in-out;
-  z-index: 10000;
-  margin: 0;
-  padding: 0;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  height: 100vh;           /* Important: Tells the container to use the full screen height */
+  width: 100%;
+  padding: 0 10%;          /* Keeps text from hitting the red borders */
+  box-sizing: border-box;
 }
 
-/* --- 2. STYLE THE LINKS --- */
-.nav-links a {
-  color: white !important;
-  text-decoration: none;
-  font-size: 20px;
+.abtm {
   font-family: 'Aldrich', sans-serif;
-}
-
-/* --- 3. THE ACTION RULE (MUST BE AT THE END) --- */
-#menu-toggle:checked ~ .nav-links {
-  right: 0 !important; /* Slides the menu in when you click the hamburger */
+  color: white;
+  font-size: 24px;         /* Better size for paragraphs */
+  text-align: center;
+  line-height: 1.6;        /* Adds space between lines for readability */
+  max-width: 800px;        /* Prevents the text from stretching too wide */
+  margin: 0;               /* Removes default margins that cause alignment issues */
+  z-index: 1;
 }
